@@ -1,0 +1,40 @@
+{
+    "manifest_version": 2,
+    "name": "fgslytics",
+    "version": "0.1.0",
+    "background": {
+        "scripts": [
+            "background.js"
+        ],
+        "persistent": false
+    },
+    "icons": {
+        "16": "./icons/fgsicon.png",
+        "36": "./icons/fgsicon.png",
+        "48": "./icons/fgsicon.png",
+        "120": "./icons/fgsicon.png"
+    },
+    "content_scripts": [
+        {
+            "matches": [
+                "<all_urls>"
+            ],
+            "js": [
+                "content-script.js"
+            ]
+        }
+    ],
+    "web_accessible_resources": [
+        "inject-script.js"
+    ],
+    "browser_action": {
+        "default_popup": "popup.html",
+        "default_title": "FGSlytics"
+    },
+    "permissions": [
+        "activeTab",
+		"tabs",
+		"http://*/*",
+		"https://*/*"
+    ]
+}
